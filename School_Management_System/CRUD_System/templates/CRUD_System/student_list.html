@@ -2,10 +2,10 @@
 {% block body_block %}
 
 <h1>List of all students</h1>
-<!-- <ul>
-    {% for school in school_list %}
-        <li> {{ school.name }} </li>
+<ul>
+    {% for student in students %}
+        <li> {{ student.name }} {{ student.last_name}}, at {{ student.school}} </li>
     {% endfor %}
-</ul> -->
+</ul>
 
 {% endblock %}
