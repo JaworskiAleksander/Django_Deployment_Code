@@ -5,14 +5,23 @@ from django.db import models
 class School(models.Model):
     name = models.CharField(max_length = 256)
     location = models.CharField(max_length = 256)
-    
+
+    def __str__(self):
+        return self.name
+
 class Principal(models.Model):
     name = models.CharField(max_length = 256)
     last_name = models.CharField(max_length = 256)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     # picture = models.ImageField()
 
+    def __str__(self):
+        return self.name
+
 class Student(models.Model):
     name = models.CharField(max_length = 256)
     last_name = models.CharField(max_length = 256)
     school = models.ForeignKey(School, on_delete=models.CASCADE, related_name='students')
+
+    def __str__(self):
+        return self.name
