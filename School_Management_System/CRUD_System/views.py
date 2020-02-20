@@ -16,7 +16,7 @@ class CRUD_SystemIndex(TemplateView):
 
 # this class is responsible for displaying list of all schools
 class SchoolListView(ListView):
-    context_object_name = 'school_list'
+    context_object_name = 'schools'
     model = models.School
     # template_name = 'CRUD_System/CRUD_System_schools.html'
 
