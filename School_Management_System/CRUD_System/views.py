@@ -12,7 +12,7 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 class CRUD_SystemIndex(TemplateView):
-    template_name = 'CRUD_System/school_list.html'
+    template_name = 'CRUD_System/index.html'
 
 # this class is responsible for displaying list of all schools
 class SchoolListView(ListView):
