@@ -19,5 +19,6 @@ from CRUD_System import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('CRUD_System.urls', namespace='CRUD_System')),
+    path('', views.IndexView.as_view(), name='index'),
+    path('CRUD_System/', include('CRUD_System.urls', namespace='CRUD_System')),
 ]
