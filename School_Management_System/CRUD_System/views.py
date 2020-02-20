@@ -21,3 +21,12 @@ class SchoolListView(ListView):
 class SchoolDetailView(DetailView):
     context_object_name = 'school_details'
     model = models.School
+
+class StudentListView(ListView):
+    context_object_name = 'students'
+    model = models.Student
+
+
+class PrincipalListView(ListView):
+    context_object_name = 'principals'
+    model = models.Principal
