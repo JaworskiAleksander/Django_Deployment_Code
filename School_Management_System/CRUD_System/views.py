@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import (View, TemplateView,
                                 ListView, DetailView,
                                 CreateView, DeleteView,
@@ -27,6 +28,9 @@ class SchoolCreateView(CreateView):
     model = models.School
     fields = ('name', 'location')
 
+    def get_success_url(self):
+        return reverse('CRUD_System:schools')
+
 class SchoolDetailView(DetailView):
     context_object_name = 'school_details'
     model = models.School
@@ -43,6 +47,9 @@ class StudentCreateView(CreateView):
     template_name = 'CRUD_System/CRUD_AddView.html'
     fields = ('name', 'last_name', 'school')
 
+    def get_success_url(self):
+        return reverse('CRUD_System:students')
+
 # Principal views
 class PrincipalListView(ListView):
     context_object_name = 'principals'
@@ -54,3 +61,6 @@ class PrincipalCreateView(CreateView):
     template_name = 'CRUD_System/CRUD_AddView.html'
     model = models.Principal
     fields = ('name', 'last_name', 'school')
+
+    def get_success_url(self):
+        return reverse('CRUD_System:principals')
