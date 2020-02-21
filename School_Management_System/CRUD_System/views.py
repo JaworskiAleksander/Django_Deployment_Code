@@ -22,7 +22,8 @@ class SchoolListView(ListView):
     template_name = 'CRUD_ListView.html'
 
 class SchoolCreateView(CreateView):
-    context_object_name = 'school_create'
+    context_object_name = 'add_school'
+    template_name = 'CRUD_System/CRUD_AddView.html'
     model = models.School
     fields = ('name', 'location')
 
@@ -37,8 +38,9 @@ class StudentListView(ListView):
     template_name = 'CRUD_ListView.html'
 
 class StudentCreateView(CreateView):
-    context_object_name = 'student_create'
+    context_object_name = 'add_student'
     model = models.Student
+    template_name = 'CRUD_System/CRUD_AddView.html'
     fields = ('name', 'last_name', 'school')
 
 # Principal views
@@ -48,6 +50,7 @@ class PrincipalListView(ListView):
     template_name = 'CRUD_ListView.html'
 
 class PrincipalCreateView(CreateView):
-    context_object_name = 'principal_create'
+    context_object_name = 'add_principal'
+    template_name = 'CRUD_System/CRUD_AddView.html'
     model = models.Principal
     fields = ('name', 'last_name', 'school')
