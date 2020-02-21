@@ -5,6 +5,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value='Submit!' class='btn btn-success'>
+        <a href="{% url 'CRUD_System:CRUD_Index'%}" class='btn btn-danger'>Abort!</a>
     </form>
 
 {% endblock %}
