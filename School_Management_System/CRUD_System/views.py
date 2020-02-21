@@ -18,7 +18,7 @@ class CRUD_SystemIndex(TemplateView):
 class SchoolListView(ListView):
     context_object_name = 'schools'
     model = models.School
-    # template_name = 'CRUD_System/CRUD_System_schools.html'
+    template_name = 'CRUD_ListView.html'
 
 
 class SchoolDetailView(DetailView):
@@ -28,8 +28,10 @@ class SchoolDetailView(DetailView):
 class StudentListView(ListView):
     context_object_name = 'students'
     model = models.Student
+    template_name = 'CRUD_ListView.html'
 
 
 class PrincipalListView(ListView):
     context_object_name = 'principals'
     model = models.Principal
+    template_name = 'CRUD_ListView.html'
