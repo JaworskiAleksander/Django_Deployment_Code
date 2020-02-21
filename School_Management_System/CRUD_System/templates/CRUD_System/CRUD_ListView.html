@@ -1,0 +1,32 @@
+{% extends 'CRUD_SYSTEM/CRUD_System_base.html'%}
+{% block body_block %}
+    <!--  -->
+    {% if schools %}
+        <h1>List of available schools</h1>
+        <ul>
+            {% for school in schools %}
+                <li> {{ school.name }}, located at {{ school.location}}</li>
+            {% endfor %}
+        </ul>
+    {% elif students %}
+    <h1>List of all students</h1>
+    <ul>
+        {% for student in students %}
+            <li> {{ student.name }} {{ student.last_name}}, at {{ student.school}} </li>
+        {% endfor %}
+    </ul>
+
+    {% elif principals %}
+    <h1>List of principals</h1>
+    <ul>
+        {% for person in principals %}
+            <li> {{ person.name }} {{ person.last_name }} </li>
+        {% endfor %}
+    </ul>
+
+    {% else%}
+        <h1>Welcome to CRUD_System</h1>
+        <p>This is an example of implementation of basic CRUD operations perfomed using Python3, Django 2.x and SQLite3 tech stack</p>
+    {% endif%}
+    <!--  -->
+{% endblock %}
