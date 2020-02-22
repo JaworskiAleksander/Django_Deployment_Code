@@ -10,7 +10,9 @@
     <h3>Students:</h3>
     <ul>
         {% for student in school_details.students.all %}
-        <li>ID:{{ student.id}}, {{student.name}} {{student.last_name}}</li>
+        <a href="{% url 'CRUD_System:student_details' student.id%}">
+            <li>ID:{{ student.id}}, {{student.name}} {{student.last_name}}</li>
+        </a>
         {% endfor %}
     </ul>
 
