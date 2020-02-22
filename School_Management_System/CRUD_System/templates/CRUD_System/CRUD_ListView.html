@@ -5,7 +5,9 @@
         <h1>List of available schools</h1>
         <ul>
             {% for school in schools %}
+            <a href="{{school.id}}">
                 <li> {{ school.name }}, located at {{ school.location}}</li>
+            </a>
             {% empty %}
                 <li>Sorry, no schools here!</li>
             {% endfor %}
@@ -17,7 +19,9 @@
     <h1>List of all students</h1>
     <ul>
         {% for student in students %}
+        <a href="{{ student.id }}">
             <li> {{ student.name }} {{ student.last_name}}, at {{ student.school}} </li>
+        </a>
             {% empty %}
                 <li>Sorry, no entries here!</li>
         {% endfor %}
@@ -29,7 +33,9 @@
     <h1>List of principals</h1>
     <ul>
         {% for person in principals %}
+        <a href="{{ principal.id }}">
             <li> {{ person.name }} {{ person.last_name }} </li>
+        </a>
             {% empty %}
                 <li>Sorry, no entries here!</li>
         {% endfor %}

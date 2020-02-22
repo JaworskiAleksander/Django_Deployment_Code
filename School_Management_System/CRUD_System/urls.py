@@ -13,7 +13,7 @@ urlpatterns = [
     path('add_student/', views.StudentCreateView.as_view(), name='add_student'),
     path('add_principal/', views.PrincipalCreateView.as_view(), name='add_principal'),
 
-    path('<int:pk>', views.PrincipalDetailView.as_view(), name='principal_details'),
-    path('<int:pk>', views.SchoolDetailView.as_view(), name='school_details'),
-    path('<int:pk>', views.StudentDetailView.as_view(), name='student_details'),
+    path('principals/<int:pk>', views.PrincipalDetailView.as_view(), name='principal_details'),
+    path('schools/<int:pk>', views.SchoolDetailView.as_view(), name='school_details'),
+    path('students/<int:pk>', views.StudentDetailView.as_view(), name='student_details'),
 ]
