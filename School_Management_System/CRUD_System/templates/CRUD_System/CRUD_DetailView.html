@@ -5,8 +5,11 @@
     <h1>Welcome to the School Detail Page</h1>
     <h2>Details</h2>
     <p>Name: {{school_details.name }}</p>
-    <!-- ADD SECURITY HERE -->
-    <p>Principal: <a href="{% url 'CRUD_System:principal_details' school_details.principal.all.0.id %}">{{ school_details.principal.all.0 }}</a></p>
+    {% if school_details.principal.all.0 %}
+        <p>Principal: <a href="{% url 'CRUD_System:principal_details' school_details.principal.all.0.id %}">{{ school_details.principal.all.0.name }} {{ school_details.principal.all.0.last_name}}</a></p>
+    {% else%}
+        <p>Principal: NONE</p>
+    {% endif %}
     <p>Location: {{ school_details.location }}</p>
     <h3>Students:</h3>
     <ul>
