@@ -5,6 +5,7 @@
     <h1>Welcome to the School Detail Page</h1>
     <h2>Details</h2>
     <p>Name: {{school_details.name }}</p>
+    <!-- ADD SECURITY HERE -->
     <p>Principal: <a href="{% url 'CRUD_System:principal_details' school_details.principal.all.0.id %}">{{ school_details.principal.all.0 }}</a></p>
     <p>Location: {{ school_details.location }}</p>
     <h3>Students:</h3>
@@ -20,6 +21,10 @@
 {% elif student_details %}
     <h1>Welcome to the Student Detail Page</h1>
     <h2>Details</h2>
+    <p>ID: {{ student_details.id }}</p>
+    <p>Name: {{ student_details.name }}</p>
+    <p>Last name: {{ student_details.last_name }}</p>
+    <p>School: <a href="{% url 'CRUD_System:school_details' student_details.school.id%}">{{ student_details.school }}</a></p>
 
 {% elif principal_details%}
     <h1>Welcome to the Principal Detail Page</h1>
