@@ -17,7 +17,7 @@ class School(models.Model):
 class Principal(models.Model):
     name = models.CharField(max_length = 256)
     last_name = models.CharField(max_length = 256)
-    school = models.ForeignKey(School, on_delete=models.CASCADE)
+    school = models.ForeignKey(School, on_delete=models.CASCADE, related_name='principal')
     # picture = models.ImageField()
 
     def __str__(self):

@@ -1,6 +1,23 @@
 {% extends 'CRUD_System/CRUD_System_base.html' %}
 {% block body_block %}
-<h1>this is a DetailView template ... </h1>
-<h1>Hello World! ... or something ...</h1>
+
+{% if school_details %}
+    <h1>Welcome to the School Detail Page</h1>
+    <h2>Details</h2>
+    <p>Name: {{school_details.name }}</p>
+    <p>Principal:{{ echo school_details.principal.all }}</p>
+    <p>Location: {{ school_details.location }}</p>
+    <h3>Students:</h3>
+
+
+{% elif student_details %}
+    <h1>Welcome to the Student Detail Page</h1>
+    <h2>Details</h2>
+
+{% elif principal_details%}
+    <h1>Welcome to the Principal Detail Page</h1>
+    <h2>Details</h2>
+    
+{% endif %}
 
 {% endblock %}
