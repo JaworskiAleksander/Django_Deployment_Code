@@ -32,9 +32,10 @@
     {% elif principals %}
     <h1>List of principals</h1>
     <ul>
-        {% for person in principals %}
+        {% for principal in principals %}
         <a href="{{ principal.id }}">
-            <li> {{ person.name }} {{ person.last_name }} </li>
+            <li> {{ principal.name }} {{ principal.last_name }}, at {{ principal.school.name}}
+                {{principal.school.location}} </li>
         </a>
             {% empty %}
                 <li>Sorry, no entries here!</li>
