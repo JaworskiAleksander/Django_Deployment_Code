@@ -34,6 +34,7 @@ class SchoolCreateView(CreateView):
 class SchoolDetailView(DetailView):
     context_object_name = 'school_details'
     model = models.School
+    template_name = 'CRUD_DetailView.html'
 
 # Student views
 class StudentListView(ListView):
@@ -50,6 +51,11 @@ class StudentCreateView(CreateView):
     def get_success_url(self):
         return reverse('CRUD_System:students')
 
+class StudentDetailView(DetailView):
+    context_object_name = 'student_details'
+    model = models.Student
+    template_name = 'CRUD_DetailView.html'
+
 # Principal views
 class PrincipalListView(ListView):
     context_object_name = 'principals'
@@ -64,3 +70,8 @@ class PrincipalCreateView(CreateView):
 
     def get_success_url(self):
         return reverse('CRUD_System:principals')
+
+class PrincipalDetailView(DetailView):
+    context_object_name = 'principal_details'
+    model = models.Principal
+    template_name = 'CRUD_DetailView.html'
