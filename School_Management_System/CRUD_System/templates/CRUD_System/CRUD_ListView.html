@@ -6,6 +6,8 @@
         <ul>
             {% for school in schools %}
                 <li> {{ school.name }}, located at {{ school.location}}</li>
+            {% empty %}
+                <li>Sorry, no schools here!</li>
             {% endfor %}
         </ul>
         <a href="{% url 'CRUD_System:add_school'%}">
@@ -16,6 +18,8 @@
     <ul>
         {% for student in students %}
             <li> {{ student.name }} {{ student.last_name}}, at {{ student.school}} </li>
+            {% empty %}
+                <li>Sorry, no entries here!</li>
         {% endfor %}
     </ul>
         <a href="{% url 'CRUD_System:add_student'%}">
@@ -26,8 +30,13 @@
     <ul>
         {% for person in principals %}
             <li> {{ person.name }} {{ person.last_name }} </li>
+            {% empty %}
+                <li>Sorry, no entries here!</li>
         {% endfor %}
     </ul>
+        <a href="{% url 'CRUD_System:add_principal'%}">
+            <input type="submit" name="" id="" class='btn btn-success' value='Add principal'>
+        </a>
 
     {% else%}
         <p>You shouldn't be able to see this view ...</p>
