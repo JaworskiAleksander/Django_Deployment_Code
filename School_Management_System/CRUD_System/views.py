@@ -43,6 +43,7 @@ class SchoolUpdateView(UpdateView):
 
 class SchoolDeleteView(DeleteView):
     model = models.School
+    template_name = 'CRUD_System/CRUD_confirm_delete.html'
 
     def get_success_url(self):
         return reverse('CRUD_System:schools')
@@ -74,6 +75,7 @@ class StudentUpdateView(UpdateView):
 
 class StudentDeleteView(DeleteView):
     model = models.Student
+    template_name = 'CRUD_System/CRUD_confirm_delete.html'
 
     def get_success_url(self):
         return reverse('CRUD_System:students')
@@ -105,6 +107,7 @@ class PrincipalUpdateView(UpdateView):
 
 class PrincipalDeleteView(DeleteView):
     model = models.Principal
+    template_name = 'CRUD_System/CRUD_confirm_delete.html'
 
     def get_success_url(self):
         return reverse('CRUD_System:principals')

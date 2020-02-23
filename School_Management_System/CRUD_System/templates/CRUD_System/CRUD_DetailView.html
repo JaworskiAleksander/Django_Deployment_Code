@@ -26,6 +26,9 @@
     <a href="{% url 'CRUD_System:school_update' school_details.id%}">
         <input type="submit" name="" id="" class='btn btn-warning' value='Update'>        
     </a>
+    <a href="{% url 'CRUD_System:school_delete' school_details.id %}">
+        <input type="submit" class='btn btn-danger' value='Delete'>
+    </a>
 
 
 {% elif student_details %}
@@ -41,6 +44,10 @@
         <input type="submit" name="" id="" class='btn btn-warning' value="Update">
     </a>
 
+    <a href="{% url 'CRUD_System:student_delete' student_details.id %}">
+        <input type="submit" class='btn btn-danger' value='Delete'>
+    </a>
+
 {% elif principal_details %}
     <h1>Welcome to the Principal Detail Page</h1>
     <h2>Details</h2>
@@ -51,6 +58,9 @@
 <!-- ADD Update! button here -->
     <a href="{% url 'CRUD_System:principal_update' principal_details.id %}">
         <input type="submit" class='btn btn-warning' value='Update'>
+    </a>
+    <a href="{% url 'CRUD_System:principal_delete' principal_details.id %}">
+        <input type="submit" class='btn btn-danger' value='Delete'>
     </a>
 
 {% endif %}
