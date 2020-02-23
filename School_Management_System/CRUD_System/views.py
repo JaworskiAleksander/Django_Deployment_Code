@@ -39,6 +39,7 @@ class SchoolDetailView(DetailView):
 class SchoolUpdateView(UpdateView):
     fields = '__all__'
     model = models.School
+    template_name = 'CRUD_System/CRUD_UpdateView.html'
     
 # Student views
 class StudentListView(ListView):
@@ -63,6 +64,7 @@ class StudentDetailView(DetailView):
 class StudentUpdateView(UpdateView):
     fields = '__all__'
     model = models.Student
+    template_name = 'CRUD_System/CRUD_UpdateView.html'
     
 # Principal views
 class PrincipalListView(ListView):
@@ -87,3 +89,4 @@ class PrincipalDetailView(DetailView):
 class PrincipalUpdateView(UpdateView):
     fields = '__all__'
     model = models.Principal
+    template_name = 'CRUD_System/CRUD_UpdateView.html'

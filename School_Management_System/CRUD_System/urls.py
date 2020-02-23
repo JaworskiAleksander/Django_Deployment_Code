@@ -16,4 +16,9 @@ urlpatterns = [
     path('principals/<int:pk>', views.PrincipalDetailView.as_view(), name='principal_details'),
     path('schools/<int:pk>', views.SchoolDetailView.as_view(), name='school_details'),
     path('students/<int:pk>', views.StudentDetailView.as_view(), name='student_details'),
+
+    path('principals/<int:pk>/update', views.PrincipalDetailView.as_view(), name='principal_update'),
+    path('schools/<int:pk>/update', views.SchoolDetailView.as_view(), name='school_update'),
+    path('students/<int:pk>/update', views.StudentDetailView.as_view(), name='student_update'),
+    
 ]
