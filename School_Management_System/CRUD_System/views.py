@@ -24,7 +24,7 @@ class SchoolListView(ListView):
 
 class SchoolCreateView(CreateView):
     context_object_name = 'add_school'
-    template_name = 'CRUD_System/CRUD_AddView.html'
+    template_name = 'CRUD_System/CRUD_FormView.html'
     model = models.School
     fields = ('name', 'location')
 
@@ -39,7 +39,7 @@ class SchoolDetailView(DetailView):
 class SchoolUpdateView(UpdateView):
     fields = '__all__'
     model = models.School
-    template_name = 'CRUD_System/CRUD_UpdateView.html'
+    template_name = 'CRUD_System/CRUD_FormView.html'
 
 class SchoolDeleteView(DeleteView):
     model = models.School
@@ -56,7 +56,7 @@ class StudentListView(ListView):
 class StudentCreateView(CreateView):
     context_object_name = 'add_student'
     model = models.Student
-    template_name = 'CRUD_System/CRUD_AddView.html'
+    template_name = 'CRUD_System/CRUD_FormView.html'
     fields = ('name', 'last_name', 'school')
 
     def get_success_url(self):
@@ -70,7 +70,7 @@ class StudentDetailView(DetailView):
 class StudentUpdateView(UpdateView):
     fields = '__all__'
     model = models.Student
-    template_name = 'CRUD_System/CRUD_UpdateView.html'
+    template_name = 'CRUD_System/CRUD_FormView.html'
 
 class StudentDeleteView(DeleteView):
     model = models.Student
@@ -86,7 +86,7 @@ class PrincipalListView(ListView):
 
 class PrincipalCreateView(CreateView):
     context_object_name = 'add_principal'
-    template_name = 'CRUD_System/CRUD_AddView.html'
+    template_name = 'CRUD_System/CRUD_FormView.html'
     model = models.Principal
     fields = ('name', 'last_name', 'school')
 
@@ -101,7 +101,7 @@ class PrincipalDetailView(DetailView):
 class PrincipalUpdateView(UpdateView):
     fields = '__all__'
     model = models.Principal
-    template_name = 'CRUD_System/CRUD_UpdateView.html'
+    template_name = 'CRUD_System/CRUD_FormView.html'
 
 class PrincipalDeleteView(DeleteView):
     model = models.Principal
