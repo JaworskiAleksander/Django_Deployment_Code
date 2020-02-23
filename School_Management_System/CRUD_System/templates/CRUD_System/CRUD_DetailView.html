@@ -29,9 +29,13 @@
     <p>Last name: {{ student_details.last_name }}</p>
     <p>School: <a href="{% url 'CRUD_System:school_details' student_details.school.id%}">{{ student_details.school }}</a></p>
 
-{% elif principal_details%}
+{% elif principal_details %}
     <h1>Welcome to the Principal Detail Page</h1>
     <h2>Details</h2>
+    <p>ID: {{ principal_details.id }}</p>
+    <p>Name: {{ principal_details.name }} </p>
+    <p>Last Name: {{principal_details.last_name }}</p>
+    <p>School: <a href="{% url 'CRUD_System:school_details' principal_details.school.id%}">{{ principal_details.school }}</a></p>
     
 {% endif %}
 
