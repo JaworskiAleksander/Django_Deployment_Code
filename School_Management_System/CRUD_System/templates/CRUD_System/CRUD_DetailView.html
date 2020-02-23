@@ -6,7 +6,11 @@
     <h2>Details</h2>
     <p>Name: {{school_details.name }}</p>
     {% if school_details.principal.all.0 %}
-        <p>Principal: <a href="{% url 'CRUD_System:principal_details' school_details.principal.all.0.id %}">{{ school_details.principal.all.0.name }} {{ school_details.principal.all.0.last_name}}</a></p>
+        <h3>Principals:</h3>
+        {% for person in school_details.principal.all%}
+            <li>#{{ person.id }}: <a href="{% url 'CRUD_System:principal_details' person.id %}">{{ person.name }} {{ person.last_name}}</a></li>
+
+        {% endfor %}
     {% else%}
         <p>Principal: NONE</p>
     {% endif %}
@@ -19,6 +23,9 @@
         </a>
         {% endfor %}
     </ul>
+    <a href="{% url 'CRUD_System:school_update' school_details.id%}">
+        <input type="submit" name="" id="" class='btn btn-warning' value='Update'>        
+    </a>
 
 
 {% elif student_details %}
@@ -28,6 +35,8 @@
     <p>Name: {{ student_details.name }}</p>
     <p>Last name: {{ student_details.last_name }}</p>
     <p>School: <a href="{% url 'CRUD_System:school_details' student_details.school.id%}">{{ student_details.school }}</a></p>
+<!-- ADD Update! button here -->
+
 
 {% elif principal_details %}
     <h1>Welcome to the Principal Detail Page</h1>
@@ -36,7 +45,11 @@
     <p>Name: {{ principal_details.name }} </p>
     <p>Last Name: {{principal_details.last_name }}</p>
     <p>School: <a href="{% url 'CRUD_System:school_details' principal_details.school.id%}">{{ principal_details.school }}</a></p>
-    
+<!-- ADD Update! button here -->
+    <a href="{% url 'CRUD_System:principal_update' principal_details.id %}">
+        <input type="submit" class='btn btn-warning' value='Update'>
+    </a>
+
 {% endif %}
 
 {% endblock %}
