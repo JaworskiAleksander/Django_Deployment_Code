@@ -37,6 +37,9 @@
     <p>School: <a href="{% url 'CRUD_System:school_details' student_details.school.id%}">{{ student_details.school }}</a></p>
 <!-- ADD Update! button here -->
 
+    <a href="{% url 'CRUD_System:student_update' student_details.id%}">
+        <input type="submit" name="" id="" class='btn btn-warning' value="Update">
+    </a>
 
 {% elif principal_details %}
     <h1>Welcome to the Principal Detail Page</h1>
